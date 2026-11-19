@@ -182,6 +182,25 @@ namespace HomeFitBot
                 // Описание команды /exit.
                 Console.WriteLine("  /exit  — выход из программы.");
             }
+
+
+            /// <summary>
+            /// Метод HandleInfo выводит сведения о программе из констант и статического поля "дата создания программы".
+            /// </summary>
+            static void HandleInfo()
+            {
+                // Заголовок с префиксом. Prefix автоматически добавляет "Имя, " при наличии имени пользователя.
+                Console.WriteLine($"{Prefix}информация о программе:");
+
+                // Название подставляется из константы BotName.
+                Console.WriteLine($"  Название: {BotName}");
+
+                // Версия подставляется из константы Version.
+                Console.WriteLine($"  Версия: {Version}");
+
+                // Дата создания подставляется из поля CreatedAt.
+                Console.WriteLine($"  Дата создания: {CreatedAt:dd.MM.yyyy}");
+            }
         }
     }
 }
