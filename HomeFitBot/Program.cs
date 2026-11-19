@@ -201,6 +201,35 @@ namespace HomeFitBot
                 // Дата создания подставляется из поля CreatedAt.
                 Console.WriteLine($"  Дата создания: {CreatedAt:dd.MM.yyyy}");
             }
+
+
+            /// <summary>
+            /// Метод HandleEcho повторяет текст, переданный после команды.
+            /// </summary>
+            /// <param name="argument"> Параметр argument (введенная строка) уже очищен от команды и пробелов. </param>
+            static void HandleEcho(string argument)
+            {
+                // Проверяем что пользователь зарегистрирован. При _userName == null просим сначала выполнить /start.
+                if (_userName == null)
+                {
+                    // Подсказка о том, что нужно сделать пользователю, затем выход из метода.
+                    Console.WriteLine("Сначала представьтесь: введите /start");
+
+                    return;
+                }
+
+                // Если аргумент пустой (введено только "/echo") — выводим подсказку с примером использования.
+                if (argument.Length == 0)
+                {
+                    // Сообщение с примером использования.
+                    Console.WriteLine($"{_userName}, вы не передали текст. Пример: /echo Привет");
+
+                    return;
+                }
+
+                // Возвращаем пользователю введенный им текст с обращением по имени пользователя.
+                Console.WriteLine($"{_userName}, вы написали: {argument}");
+            }
         }
     }
 }
