@@ -1,2 +1,10 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿
+namespace HomeFitBot
+{
+    public class Program
+    {
+        // Константа с версией программы. Значение подставляется в вызывающий код на этапе компиляции.
+        const string Version = "1.0.0";
+        
+    }
+}
