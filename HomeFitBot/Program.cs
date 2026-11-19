@@ -42,6 +42,19 @@ namespace HomeFitBot
                 if (HandleCommand(input.Trim()))
                     break;
             }
+
+
+            /// <summary>
+            /// Метод PrintWelcome выводит приветствие и перечень доступных команд.
+            /// </summary>
+            static void PrintWelcome()
+            {
+                // Приветственная строка.
+                Console.WriteLine("Добро пожаловать в фитнес-бот для домашних тренировок!");
+
+                // Подсказка со списком доступных команд.
+                Console.WriteLine("Доступные команды: /start, /help, /info, /exit");
+            }
         }
     }
 }
